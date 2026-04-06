@@ -20,7 +20,7 @@ function normalizeSchoolRecord(record) {
     description: pickValue(record, ["description", "Description"]),
     acceptanceRate: pickValue(record, ["acceptanceRate", "acceptance_rate", "Acceptance Rate"]),
     tuition: pickValue(record, ["tuition", "tuition_and_fees", "Tuition and fees"]),
-    inStateTuition: pickValue(record, ["inStateTuition", "in_state", "In-state"]),
+    inStateTuition: pickValue(record, ["inStateTuition", "in_state_tuition", "in_state", "In-state"]),
     satRange: pickValue(record, ["satRange", "sat_range", "SAT Range"]),
     enrollment: pickValue(record, ["enrollment", "undergrad_enrollment", "Undergrad Enrollment"]),
     location: pickValue(record, ["location", "Location"]),

@@ -4,4 +4,4 @@ dist/
 .env.local
 .env.*.local
 .DS_Store
-School.csv
+Schools.csv
