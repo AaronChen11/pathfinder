@@ -1,0 +1,83 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="26" y1="18" x2="226" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F2F9FF" />
+      <stop offset="0.52" stop-color="#DFEEFF" />
+      <stop offset="1" stop-color="#D2E1FF" />
+    </linearGradient>
+    <linearGradient id="crest" x1="55" y1="38" x2="203" y2="214" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6A95E7" />
+      <stop offset="0.45" stop-color="#4269B0" />
+      <stop offset="1" stop-color="#213864" />
+    </linearGradient>
+    <linearGradient id="trail" x1="86" y1="177" x2="164" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2DB172" />
+      <stop offset="1" stop-color="#187A51" />
+    </linearGradient>
+    <linearGradient id="star" x1="146" y1="68" x2="169" y2="95" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8DC0FF" />
+      <stop offset="1" stop-color="#5C89D6" />
+    </linearGradient>
+    <filter id="shadow" x="28" y="24" width="200" height="214" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="16"/>
+      <feGaussianBlur stdDeviation="14"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0588235 0 0 0 0 0.141176 0 0 0 0 0.270588 0 0 0 0.16 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect x="16" y="16" width="224" height="224" rx="56" fill="url(#bg)" />
+
+  <g filter="url(#shadow)">
+    <path
+      d="M128 40C164.45 40 194 69.55 194 106V136.5C194 171.4 170.23 202.25 136.36 210.96L128 213.11L119.64 210.96C85.77 202.25 62 171.4 62 136.5V106C62 69.55 91.55 40 128 40Z"
+      fill="white"
+      fill-opacity="0.94"
+    />
+    <path
+      d="M128 49C159.48 49 185 74.52 185 106V136.5C185 167.31 164 194.55 134.12 202.24L128 203.81L121.88 202.24C92 194.55 71 167.31 71 136.5V106C71 74.52 96.52 49 128 49Z"
+      stroke="url(#crest)"
+      stroke-width="12"
+    />
+  </g>
+
+  <path
+    d="M128 70L169 92V100H87V92L128 70Z"
+    fill="#27457B"
+  />
+  <path d="M96 104H108V136H96V104Z" fill="#27457B"/>
+  <path d="M122 104H134V136H122V104Z" fill="#27457B"/>
+  <path d="M148 104H160V136H148V104Z" fill="#27457B"/>
+  <rect x="86" y="138" width="84" height="11" rx="5.5" fill="#27457B" />
+  <rect x="102" y="149" width="52" height="8" rx="4" fill="#355A97" fill-opacity="0.28" />
+
+  <path
+    d="M87 177C96 166 105 157 116 151C126 145 136 136 144 123C151 112 156 100 158 85"
+    stroke="url(#trail)"
+    stroke-width="15"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <circle cx="87" cy="177" r="14" fill="#2DB172" />
+  <circle cx="87" cy="177" r="6" fill="#E9FFF4" fill-opacity="0.92" />
+
+  <circle cx="158" cy="84" r="13" fill="#27457B" />
+  <circle cx="158" cy="84" r="5.5" fill="#EAF3FF" fill-opacity="0.95" />
+
+  <path
+    d="M158 62L162.62 72.01L173.57 73.33L165.47 80.82L167.58 91.67L158 86.31L148.42 91.67L150.53 80.82L142.43 73.33L153.38 72.01L158 62Z"
+    fill="url(#star)"
+  />
+
+  <path
+    d="M100 186C109 189.9 118.37 192 128 192C137.18 192 146.11 190.09 154.61 186.38"
+    stroke="#7CA0D3"
+    stroke-width="4.5"
+    stroke-linecap="round"
+    opacity="0.68"
+  />
+</svg>

@@ -1,0 +1,113 @@
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: var(--page-background);
+  --page-background:
+    radial-gradient(circle at top left, rgba(70, 131, 180, 0.16), transparent 32%),
+    linear-gradient(180deg, #eef4f8 0%, #f8fbfd 52%, #eef3f7 100%);
+  --text: #132238;
+  --panel-background: rgba(255, 255, 255, 0.86);
+  --sidebar-background: rgba(250, 252, 253, 0.92);
+  --surface-muted: #f6fafc;
+  --surface-solid: #ffffff;
+  --border: rgba(19, 34, 56, 0.08);
+  --border-strong: rgba(19, 34, 56, 0.12);
+  --shadow: 0 18px 40px rgba(19, 34, 56, 0.08);
+  --eyebrow: #4b79a1;
+  --muted: #62768a;
+  --muted-strong: #324963;
+  --pill-background: #123456;
+  --pill-text: #ffffff;
+  --tab-background: rgba(255, 255, 255, 0.72);
+  --tab-text: #324963;
+  --primary-background: #16794d;
+  --primary-background-hover: #0f623e;
+  --primary-text: #ffffff;
+  --ghost-background: #d9ecf5;
+  --ghost-background-hover: #c8e3f1;
+  --ghost-text: #12486b;
+  --danger-background: #f6d4d1;
+  --danger-background-hover: #efc2bd;
+  --danger-text: #8b2922;
+  --link-text: #24557a;
+  --splitter-background: linear-gradient(180deg, rgba(75, 121, 161, 0.08), rgba(18, 52, 86, 0.12));
+  --splitter-handle: rgba(18, 52, 86, 0.25);
+  --input-background: #ffffff;
+  --toggle-shell: #16253a;
+  --toggle-shell-border: rgba(75, 121, 161, 0.22);
+  --toggle-idle-text: rgba(231, 240, 249, 0.56);
+  --toggle-active-surface: #f8fbfd;
+  --toggle-active-text: #132238;
+}
+
+:root[data-theme="dark"] {
+  --page-background:
+    radial-gradient(circle at top left, rgba(87, 155, 214, 0.14), transparent 30%),
+    linear-gradient(180deg, #08111c 0%, #0d1724 54%, #0a1420 100%);
+  --text: #e7eef7;
+  --panel-background: rgba(14, 24, 37, 0.86);
+  --sidebar-background: rgba(10, 19, 31, 0.92);
+  --surface-muted: #122234;
+  --surface-solid: #0f1b2b;
+  --border: rgba(164, 188, 214, 0.14);
+  --border-strong: rgba(164, 188, 214, 0.24);
+  --shadow: 0 20px 42px rgba(0, 0, 0, 0.28);
+  --eyebrow: #7eb5e4;
+  --muted: #9eb2c6;
+  --muted-strong: #d2deea;
+  --pill-background: #d7e7f7;
+  --pill-text: #10243b;
+  --tab-background: rgba(18, 34, 52, 0.82);
+  --tab-text: #c4d6e8;
+  --primary-background: #259a62;
+  --primary-background-hover: #1d7f52;
+  --primary-text: #f4fbf8;
+  --ghost-background: #1f4058;
+  --ghost-background-hover: #28506d;
+  --ghost-text: #d5ebf8;
+  --danger-background: #5a2624;
+  --danger-background-hover: #71312e;
+  --danger-text: #ffd8d4;
+  --link-text: #8ec2ef;
+  --splitter-background: linear-gradient(180deg, rgba(85, 129, 168, 0.2), rgba(158, 191, 222, 0.12));
+  --splitter-handle: rgba(192, 214, 236, 0.34);
+  --input-background: #0f1b2b;
+  --toggle-shell: #142236;
+  --toggle-shell-border: rgba(126, 181, 228, 0.28);
+  --toggle-idle-text: rgba(207, 223, 240, 0.52);
+  --toggle-active-surface: #eef4fa;
+  --toggle-active-text: #132238;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow: hidden;
+  color: var(--text);
+  background: var(--page-background);
+  transition: background 180ms ease, color 180ms ease;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--eyebrow);
+}
+
+.muted,
+.empty-copy {
+  color: var(--muted);
+}
