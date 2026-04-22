@@ -9,6 +9,8 @@ function SearchComposer({
   selectedCategory,
   suggestions,
   loadingSuggestions,
+  placeholder = "Search or type a school",
+  showCategorySelect = true,
   onChangeQuery,
   onAdd,
   onAddSuggestion,
@@ -99,7 +101,7 @@ function SearchComposer({
                 onAdd();
               }
             }}
-            placeholder="Search or type a school"
+            placeholder={placeholder}
           />
           {showSuggestions && schoolQuery.trim() ? (
             <div className="suggestion-panel" role="listbox" id={SUGGESTION_LISTBOX_ID}>
@@ -138,9 +140,11 @@ function SearchComposer({
           Add
         </button>
       </div>
-      <div className="composer-row composer-row-single">
-        <CategorySelect value={selectedCategory} options={categories} onChange={onChangeCategory} />
-      </div>
+      {showCategorySelect ? (
+        <div className="composer-row composer-row-single">
+          <CategorySelect value={selectedCategory} options={categories} onChange={onChangeCategory} />
+        </div>
+      ) : null}
     </div>
   );
 }

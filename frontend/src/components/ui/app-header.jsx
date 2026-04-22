@@ -7,6 +7,7 @@ function AppHeader({
   selectedSchool,
   onOpenDetails,
   onOpenSchools,
+  onOpenAdvisor,
   onSignOut,
   scrollContainerRef,
 }) {
@@ -60,6 +61,9 @@ function AppHeader({
           <button className={activeTab === "schools" ? "active" : ""} onClick={onOpenSchools}>
             All Schools
           </button>
+          <button className={activeTab === "advisor" ? "active" : ""} onClick={onOpenAdvisor}>
+            AI Advisor
+          </button>
         </div>
 
         <div className="app-header-desktop-actions">
@@ -90,6 +94,9 @@ function AppHeader({
           </button>
           <button className={activeTab === "schools" ? "active" : ""} onClick={onOpenSchools}>
             All Schools
+          </button>
+          <button className={activeTab === "advisor" ? "active" : ""} onClick={onOpenAdvisor}>
+            AI Advisor
           </button>
           <button className="ghost-button" type="button" onClick={onSignOut}>
             Sign Out
