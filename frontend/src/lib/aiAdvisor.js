@@ -1,5 +1,11 @@
 import { supabase } from "./supabase";
 
+const apiBaseUrl = (import.meta.env.VITE_API_BASE_URL || "").replace(/\/$/, "");
+
+function apiUrl(path) {
+  return `${apiBaseUrl}${path}`;
+}
+
 async function getAuthHeaders() {
   if (!supabase) {
     return {};
@@ -10,9 +16,20 @@ async function getAuthHeaders() {
   return token ? { Authorization: `Bearer ${token}` } : {};
 }
 
+async function readJsonResponse(response, label) {
+  const contentType = response.headers.get("content-type") || "";
+  if (!contentType.includes("application/json")) {
+    const text = await response.text();
+    const preview = text.trim().slice(0, 80);
+    throw new Error(`${label} returned ${response.status} ${contentType || "unknown content type"}: ${preview}`);
+  }
+
+  return response.json();
+}
+
 export async function generateRecommendations(profile) {
   const authHeaders = await getAuthHeaders();
-  const response = await fetch("/api/ai-advisor/recommend", {
+  const response = await fetch(apiUrl("/api/ai-advisor/recommend"), {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,12 +47,12 @@ export async function generateRecommendations(profile) {
     throw new Error(`Failed to generate recommendations: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response, "AI advisor recommendations API");
 }
 
 export async function loadAdvisorQuestions() {
   const authHeaders = await getAuthHeaders();
-  const response = await fetch("/api/ai-advisor/questions", {
+  const response = await fetch(apiUrl("/api/ai-advisor/questions"), {
     headers: authHeaders,
   });
 
@@ -43,5 +60,5 @@ export async function loadAdvisorQuestions() {
     throw new Error(`Failed to load advisor questions: ${response.status}`);
   }
 
-  return response.json();
+  return readJsonResponse(response, "AI advisor questions API");
 }
