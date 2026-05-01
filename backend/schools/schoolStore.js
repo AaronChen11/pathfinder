@@ -42,12 +42,18 @@ async function loadSchoolsFromSupabase() {
 }
 
 async function loadSchools(filePath = DATA_PATH) {
+  const hasSupabaseConfig = Boolean(process.env.VITE_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+
   try {
     const supabaseSchools = await loadSchoolsFromSupabase();
-    if (supabaseSchools && supabaseSchools.length > 0) {
+    if (supabaseSchools !== null) {
       return supabaseSchools;
     }
   } catch (error) {
+    if (hasSupabaseConfig) {
+      throw new Error(`Failed to load schools from Supabase: ${error.message}`);
+    }
+
     console.warn("Failed to load schools from Supabase, falling back to CSV:", error.message);
   }
 
