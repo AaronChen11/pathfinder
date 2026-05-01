@@ -9,6 +9,13 @@ function getSchools() {
   return schools;
 }
 
+console.log("Startup config:", {
+  hasSupabaseUrl: Boolean(process.env.VITE_SUPABASE_URL),
+  hasSupabaseServiceRoleKey: Boolean(process.env.SUPABASE_SERVICE_ROLE_KEY),
+  schoolsTable: process.env.SUPABASE_SCHOOLS_TABLE || "usnews_undergrad_rankings",
+  port: PORT,
+});
+
 loadSchools()
   .then((loadedSchools) => {
     schools = loadedSchools;
