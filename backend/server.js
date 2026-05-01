@@ -15,10 +15,10 @@ loadSchools()
     const app = createApp({ getSchools });
 
     app.listen(PORT, () => {
-      console.log(`API listening on http://localhost:${PORT}`);
+      console.log(`API listening on http://localhost:${PORT} with ${schools.length} schools loaded`);
     });
   })
   .catch((error) => {
-    console.error("Failed to load Schools.csv:", error);
+    console.error("Failed to load schools data:", error);
     process.exit(1);
   });
